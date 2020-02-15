@@ -23,7 +23,7 @@ export default class Main extends Component {
         <Achievement />
         <Blogs />
         <Talks />
-        <Podcast />
+        {/* <Podcast /> */}
         <Contact />
         <Footer />
       </div>
