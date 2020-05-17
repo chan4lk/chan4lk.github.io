@@ -29,5 +29,3 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: master # The branch the action should deploy to.
           FOLDER: build # The folder the action should deploy.
-        env:
-          CI: false
