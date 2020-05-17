@@ -4,7 +4,7 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <div className="footer-div">
-      <p className="footer-text">Made with ❤️ by Chandima</p>
+      <span role="img" aria-label="footer text" className="footer-text">Made with ❤️ by Chandima</span>
     </div>
   );
 }
