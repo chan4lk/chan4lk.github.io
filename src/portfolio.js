@@ -88,8 +88,6 @@ const skillsSection = {
 const openSource = {
   /* Your Open Source Section to View Your Github Pinned Projects */
   /* To know how to get github key look at readme.md */
-
-  githubConvertedToken: "MGVlM2U5YTA0YjAzNzFmY2FhNzhiZmMxYWQ5MDFkY2U3ZDVlZjE4ZA==",
   githubUserName: "chan4lk"
 };
 

@@ -19,7 +19,7 @@ export default function Projects() {
       request: operation => {
         operation.setContext({
           headers: {
-            authorization: `Bearer ${atob(openSource.githubConvertedToken)}`
+            authorization: `Bearer ${atob(process.env.REACT_APP_TOKEN)}`
           }
         });
       }
