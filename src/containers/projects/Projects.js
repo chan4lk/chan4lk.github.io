@@ -31,7 +31,7 @@ export default function Projects() {
           {
             repositoryOwner(login: "${openSource.githubUserName}") {
               ... on User {
-                pinnedRepositories(first: 6) {
+                topRepositories(first: 6, orderBy: {field:STARGAZERS, direction:ASC} ) {
                   edges {
                     node {
                       nameWithOwner
