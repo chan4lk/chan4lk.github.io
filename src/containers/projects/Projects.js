@@ -31,7 +31,7 @@ export default function Projects() {
           {
             repositoryOwner(login: "${openSource.githubUserName}") {
               ... on User {
-                topRepositories(first: 6, orderBy: {field:STARGAZERS, direction:ASC} ) {
+                repositories(first: 6, orderBy: {field:UPDATED_AT, direction:DESC} ) {
                   edges {
                     node {
                       nameWithOwner
@@ -56,7 +56,7 @@ export default function Projects() {
         `
       })
       .then(result => {
-        setrepoFunction(result.data.repositoryOwner.pinnedRepositories.edges);
+        setrepoFunction(result.data.repositoryOwner.repositories.edges);
         console.log(result);
       });
   }
