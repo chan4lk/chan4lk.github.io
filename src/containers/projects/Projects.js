@@ -31,7 +31,7 @@ export default function Projects() {
           {
             repositoryOwner(login: "${openSource.githubUserName}") {
               ... on User {
-                repositories(first: 6, orderBy: {field:UPDATED_AT, direction:DESC} ) {
+                repositories(first: 7, orderBy: {field:UPDATED_AT, direction:DESC} ) {
                   edges {
                     node {
                       nameWithOwner
