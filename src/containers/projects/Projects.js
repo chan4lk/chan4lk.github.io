@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import ApolloClient from "apollo-boost";
-import { gql } from "apollo-boost";
-import "./Project.css";
-import GithubRepoCard from "../../components/githubRepoCard/GithubRepoCard";
-import Button from "../../components/button/Button";
-import { openSource } from "../../portfolio";
+import React, { useState, useEffect } from 'react';
+import ApolloClient from 'apollo-boost';
+import { gql } from 'apollo-boost';
+import './Project.css';
+import GithubRepoCard from '../../components/githubRepoCard/GithubRepoCard';
+import Button from '../../components/button/Button';
+import { openSource } from '../../portfolio';
 
 export default function Projects() {
   const [repo, setrepo] = useState([]);
@@ -15,14 +15,14 @@ export default function Projects() {
 
   function getRepoData() {
     const client = new ApolloClient({
-      uri: "https://api.github.com/graphql",
-      request: operation => {
+      uri: 'https://api.github.com/graphql',
+      request: (operation) => {
         operation.setContext({
           headers: {
-            authorization: `Bearer ${atob(process.env.REACT_APP_TOKEN)}`
-          }
+            authorization: `Bearer ${atob(process.env.REACT_APP_TOKEN)}`,
+          },
         });
-      }
+      },
     });
 
     client
@@ -53,9 +53,9 @@ export default function Projects() {
               }
             }
           }
-        `
+        `,
       })
-      .then(result => {
+      .then((result) => {
         setrepoFunction(result.data.repositoryOwner.repositories.edges);
         console.log(result);
       });
@@ -70,10 +70,19 @@ export default function Projects() {
       <h1 className="project-title">Open Source Projects</h1>
       <div className="repo-cards-div-main">
         {repo.map((v, i) => {
-          return <GithubRepoCard repo={v} key={v.node.id} />;
+          if (v.node.nameWithOwner !== 'chan4lk/chan4lk') {
+            return <GithubRepoCard repo={v} key={v.node.id} />;
+          } else {
+            return null;
+          }
         })}
       </div>
-      <Button text={"More Projects"} className="project-button" href="https://github.com/chan4lk" newTab={true} />
+      <Button
+        text={'More Projects'}
+        className="project-button"
+        href="https://github.com/chan4lk"
+        newTab={true}
+      />
     </div>
   );
 }
