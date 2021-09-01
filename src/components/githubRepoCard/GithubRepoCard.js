@@ -7,6 +7,9 @@ export default function GithubRepoCard({ repo }) {
     win.focus();
   }
 
+  const color = (repo.node.primaryLanguage || {}).color;
+  const name = (repo.node.primaryLanguage || {}).name;
+
   return (
     <div>
       <div className="repo-card-div" key={repo.node.id} onClick={() => openRepoinNewTab(repo.node.url)}>
@@ -23,8 +26,8 @@ export default function GithubRepoCard({ repo }) {
         <div className="repo-stats">
           <div className="repo-left-stat">
             <span>
-              <div className="language-color" style={{ backgroundColor: repo.node.primaryLanguage.color }}></div>
-              <p>{repo.node.primaryLanguage.name}</p>
+              <div className="language-color" style={{ backgroundColor: color }}></div>
+              <p>{name}</p>
             </span>
             <span>
               <svg aria-hidden="true" className="octicon repo-star-svg" height="16" role="img" viewBox="0 0 10 16" width="10" fill="rgb(106, 115, 125)">

@@ -19,7 +19,7 @@ export default function Projects() {
       request: (operation) => {
         operation.setContext({
           headers: {
-            authorization: `Bearer ${atob(process.env.REACT_APP_TOKEN)}`,
+            authorization: `Bearer ${window.atob(process.env.REACT_APP_TOKEN)}`,
           },
         });
       },
