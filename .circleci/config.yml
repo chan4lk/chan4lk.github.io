@@ -22,7 +22,6 @@ jobs:
           root: .
           paths:
             - .
-
   test:
     executor: node/default
     steps:
